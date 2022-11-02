@@ -12,7 +12,7 @@ namespace MappingPerformance
     {
         public static void Main(string[] args)
         {
-            var fileName = string.Format("{0}/{1}.txt", "LogFiles", DateTime.Today.ToString("dd -MM-yyyy"));
+            var fileName = string.Format("{0}/{1}.txt", "LogFiles", DateTime.Today.ToString("dd-MM-yyyy"));
             Log.Logger = new LoggerConfiguration()
                                .MinimumLevel.Information()
                                .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
