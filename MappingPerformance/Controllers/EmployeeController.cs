@@ -2,6 +2,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using System;
 using System.Threading;
 
@@ -31,22 +32,40 @@ namespace MappingPerformance.Controllers
         [Route("getEmployeesWithoutMapping")]
         public ReadEmployeeWithOutMappingResponseMessage GetEmployeeWithoutMapping([FromBody] ReadEmployeeWithOutMappingRequestMessage request)
         {
-            Logger.LogInformation("GetEmployeeWithoutMapping Controller start");
-            return ReadEmployeeWithoutMappingInteractor.Handle(request, CancellationToken.None).Result;
+            Logger.LogInformation("GetEmployeeWithoutMapping Controller - start");
+
+            var response = ReadEmployeeWithoutMappingInteractor.Handle(request, CancellationToken.None).Result;
+
+            Logger.LogInformation($"GetEmployeeWithoutMapping Controller - response - {JsonConvert.SerializeObject(response)}");
+            Logger.LogInformation("GetEmployeeWithoutMapping Controller - end");
+            return response;
         }
 
         [HttpGet]
         [Route("getEmployeesWithMapping")]
         public ReadEmployeeByMappingResponseMessage GetEmployeeWithtMapping([FromBody] ReadEmployeeByMappingRequestMessage request)
         {
-            return ReadEmployeeWithMappingInteractor.Handle(request, CancellationToken.None).Result;
+            Logger.LogInformation("GetEmployeeWithtMapping Controller - start");
+
+            var response = ReadEmployeeWithMappingInteractor.Handle(request, CancellationToken.None).Result;
+
+            Logger.LogInformation($"GetEmployeeWithtMapping Controller - response - {JsonConvert.SerializeObject(response)}");
+            Logger.LogInformation("GetEmployeeWithtMapping Controller - end");
+            return response;
         }
 
         [HttpGet]
         [Route("getEmployeeById")]
         public ReadEmployeeByIdResponseMessage ReadEmployeeById([FromBody] ReadEmployeeByIdRequestMessage request)
         {
-            return ReadEmployeeByIdInteractor.Handle(request, CancellationToken.None).Result;
+            Logger.LogInformation("ReadEmployeeById Controller - start");
+            Logger.LogInformation($"ReadEmployeeById Controller - request - {request}");
+            
+            var response = ReadEmployeeByIdInteractor.Handle(request, CancellationToken.None).Result;
+            
+            Logger.LogInformation($"ReadEmployeeById Controller - response - {JsonConvert.SerializeObject(response)}");
+            Logger.LogInformation("ReadEmployeeById Controller - end");
+            return response;
         }
     }
 }
