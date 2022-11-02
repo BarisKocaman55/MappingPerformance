@@ -1,0 +1,67 @@
+[
+  {
+    "Id": 100,
+    "FirstName": "Roscoe",
+    "MiddleName": "Jerald",
+    "LastName": "Crona",
+    "Title": "Mr.",
+    "DOB": "2018-04-18T01:21:00.3157107-07:00",
+    "Email": "Roscoe36@gmail.com",
+    "Gender": 0,
+    "SSN": "939-69-6554",
+    "Suffix": "I",
+    "Phone": "(458)-857-7797"
+  },
+  {
+    "Id": 101,
+    "FirstName": "Arvid",
+    "MiddleName": "Dessie",
+    "LastName": "O'Connell",
+    "Title": "Ms.",
+    "DOB": "2019-11-02T16:13:51.7674792-07:00",
+    "Email": "Arvid_OConnell82@hotmail.com",
+    "Gender": 0,
+    "SSN": "169-74-8051",
+    "Suffix": "III",
+    "Phone": "(193)-828-6811"
+  },
+  {
+    "Id": 102,
+    "FirstName": "Martina",
+    "MiddleName": "Hayley",
+    "LastName": "Mayert",
+    "Title": "Miss",
+    "DOB": "2006-04-29T12:23:10.0350668-07:00",
+    "Email": "Martina28@yahoo.com",
+    "Gender": 0,
+    "SSN": "140-45-9565",
+    "Suffix": "DDS",
+    "Phone": "(735)-630-1487"
+  },
+  {
+    "Id": 103,
+    "FirstName": "Rick",
+    "MiddleName": "Felicia",
+    "LastName": "Hills",
+    "Title": "Ms.",
+    "DOB": "2005-07-29T14:42:37.7881868-07:00",
+    "Email": "Rick.Hills@yahoo.com",
+    "Gender": 0,
+    "SSN": "423-30-8247",
+    "Suffix": "PhD",
+    "Phone": "(443)-706-4144"
+  },
+  {
+    "Id": 104,
+    "FirstName": "Zachary",
+    "MiddleName": "Webster",
+    "LastName": "Doyle",
+    "Title": "Ms.",
+    "DOB": "2014-06-08T07:00:22.7992716-07:00",
+    "Email": "Zachary.Doyle@yahoo.com",
+    "Gender": 1,
+    "SSN": "257-61-6477",
+    "Suffix": "II",
+    "Phone": "(506)-588-7105"
+  }
+]
