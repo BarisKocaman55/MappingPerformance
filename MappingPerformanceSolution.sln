@@ -5,13 +5,15 @@ VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MappingPerformance", "MappingPerformance\MappingPerformance.csproj", "{C9392D57-3B71-4D2C-88FF-658608AA0426}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MappingPerformance.Interactors", "MappingPerformance.Interactors\MappingPerformance.Interactors.csproj", "{8549B765-7E67-4B81-B046-161D79FF2CC0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MappingPerformance.Interactors", "MappingPerformance.Interactors\MappingPerformance.Interactors.csproj", "{8549B765-7E67-4B81-B046-161D79FF2CC0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MappingPerformance.Entities", "MappingPerformance.Entities\MappingPerformance.Entities.csproj", "{621673AB-F041-48FB-AD86-DEF244E15C7B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MappingPerformance.Entities", "MappingPerformance.Entities\MappingPerformance.Entities.csproj", "{621673AB-F041-48FB-AD86-DEF244E15C7B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MappingPerformance.Infrastructure", "MappingPerformance.Infrastructure\MappingPerformance.Infrastructure.csproj", "{D367A85D-1454-474C-AD36-7C4E9DAEFCB5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MappingPerformance.Infrastructure", "MappingPerformance.Infrastructure\MappingPerformance.Infrastructure.csproj", "{D367A85D-1454-474C-AD36-7C4E9DAEFCB5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MappingPerformance.Test", "MappingPerformance.Test\MappingPerformance.Test.csproj", "{2357BEA8-0A7F-48F9-BAEB-43DECAC6915A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MappingPerformance.Test", "MappingPerformance.Test\MappingPerformance.Test.csproj", "{2357BEA8-0A7F-48F9-BAEB-43DECAC6915A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MappingPerformance.Adapters", "MappingPerformance.Adapters\MappingPerformance.Adapters.csproj", "{6D559FBE-1690-44C1-A0EF-CEC7E44F51DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{2357BEA8-0A7F-48F9-BAEB-43DECAC6915A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2357BEA8-0A7F-48F9-BAEB-43DECAC6915A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2357BEA8-0A7F-48F9-BAEB-43DECAC6915A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D559FBE-1690-44C1-A0EF-CEC7E44F51DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D559FBE-1690-44C1-A0EF-CEC7E44F51DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D559FBE-1690-44C1-A0EF-CEC7E44F51DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D559FBE-1690-44C1-A0EF-CEC7E44F51DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

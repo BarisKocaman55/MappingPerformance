@@ -1,3 +1,5 @@
+using MappingPerformance.Adapters.DataAccess;
+using MappingPerformance.Adapters.IDataAccess;
 using MappingPerformance.Interactors.Interactors;
 using MappingPerformance.Logging;
 using MediatR;
@@ -6,6 +8,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -48,8 +51,11 @@ namespace MappingPerformance
                 CertificateAuthenticationDefaults.AuthenticationScheme)
                 .AddCertificate();
 
+            services.AddDbContext<DatabaseContext>(options =>
+                options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"]));
+
             // Register Services
-            
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
             // Register Interactors
             services.AddMediatR(typeof(ReadEmployeeWithOutMappingInteractor).GetTypeInfo().Assembly);
