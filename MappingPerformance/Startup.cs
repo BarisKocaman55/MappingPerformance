@@ -1,5 +1,6 @@
 using MappingPerformance.Adapters.DataAccess;
 using MappingPerformance.Adapters.IDataAccess;
+using MappingPerformance.Interactors.Helpers;
 using MappingPerformance.Interactors.Interactors;
 using MappingPerformance.Logging;
 using MediatR;
@@ -61,10 +62,14 @@ namespace MappingPerformance
             services.AddMediatR(typeof(ReadEmployeeWithOutMappingInteractor).GetTypeInfo().Assembly);
             services.AddMediatR(typeof(ReadEmployeeByMappingInteractor).GetTypeInfo().Assembly);
             services.AddMediatR(typeof(ReadEmployeeByIdInteractor).GetTypeInfo().Assembly);
+            services.AddMediatR(typeof(ReadEmployeeByAutoMapperInteractor).GetTypeInfo().Assembly);
 
 
             // Register Logger
             services.AddLogging();
+
+            // Auto Mapper
+            services.AddAutoMapper(typeof(AutoMapperHelper));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

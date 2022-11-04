@@ -6,6 +6,8 @@ using System.Reflection;
 using Unity;
 using PubSub;
 using Unity.Lifetime;
+using AutoMapper;
+using MappingPerformance.Interactors.Helpers;
 
 namespace MappingPerformance.Test.Base
 {
@@ -27,6 +29,13 @@ namespace MappingPerformance.Test.Base
         {
             container.RegisterType<IPubSubPipelineFactory, PubSubPipelineFactory>(new ContainerControlledLifetimeManager());
 
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.AddProfile(new AutoMapperHelper());
+            });
+
+            container.RegisterInstance<IMapper>(config.CreateMapper());
+                
             // register interactors
             var interactorTypes = typeof(ReadEmployeeWithOutMappingInteractor).Assembly
                                     .GetTypes()

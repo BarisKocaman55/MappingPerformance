@@ -37,6 +37,11 @@ namespace MappingPerformance
         {
             var result = client.GetAsync(string.Format("{0}", "getEmployeesWithoutMapping")).Result;
         }
-
+        
+        [Benchmark]
+        public void ReadEmployeeWithAutoMapper()
+        {
+            var result = client.GetAsync(string.Format("{0}", "getEmployeeWithAutoMapper")).Result;
+        }
     }
 }
