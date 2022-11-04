@@ -30,7 +30,7 @@ namespace MappingPerformance.Controllers
 
         [HttpGet]
         [Route("getEmployeesWithoutMapping")]
-        public ReadEmployeeWithOutMappingResponseMessage GetEmployeeWithoutMapping([FromBody] ReadEmployeeWithOutMappingRequestMessage request)
+        public ReadEmployeeWithOutMappingResponseMessage GetEmployeeWithoutMapping([FromRoute] ReadEmployeeWithOutMappingRequestMessage request)
         {
             Logger.LogInformation("GetEmployeeWithoutMapping Controller - start");
 
@@ -43,7 +43,7 @@ namespace MappingPerformance.Controllers
 
         [HttpGet]
         [Route("getEmployeesWithMapping")]
-        public ReadEmployeeByMappingResponseMessage GetEmployeeWithtMapping([FromBody] ReadEmployeeByMappingRequestMessage request)
+        public ReadEmployeeByMappingResponseMessage GetEmployeeWithtMapping([FromRoute] ReadEmployeeByMappingRequestMessage request)
         {
             Logger.LogInformation("GetEmployeeWithtMapping Controller - start");
 
@@ -55,8 +55,8 @@ namespace MappingPerformance.Controllers
         }
 
         [HttpGet]
-        [Route("getEmployeeById")]
-        public ReadEmployeeByIdResponseMessage ReadEmployeeById([FromBody] ReadEmployeeByIdRequestMessage request)
+        [Route("getEmployeeById/{Id}")]
+        public ReadEmployeeByIdResponseMessage ReadEmployeeById([FromRoute] ReadEmployeeByIdRequestMessage request)
         {
             Logger.LogInformation("ReadEmployeeById Controller - start");
             Logger.LogInformation($"ReadEmployeeById Controller - request - {request}");

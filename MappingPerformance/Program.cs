@@ -7,6 +7,7 @@ using System;
 using Serilog.Events;
 using Microsoft.Extensions.DependencyInjection;
 using MappingPerformance.Adapters.DataAccess;
+using BenchmarkDotNet.Running;
 
 namespace MappingPerformance
 {
@@ -22,6 +23,7 @@ namespace MappingPerformance
                                .WriteTo.Async(i => i.File(fileName))
                                .CreateLogger();
 
+            BenchmarkRunner.Run<MappingPerformance>();
             var host = CreateHostBuilder(args).Build();
             CreateDbIfNotExists(host);
 

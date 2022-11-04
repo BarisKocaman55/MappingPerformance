@@ -60,6 +60,7 @@ namespace MappingPerformance
             // Register Interactors
             services.AddMediatR(typeof(ReadEmployeeWithOutMappingInteractor).GetTypeInfo().Assembly);
             services.AddMediatR(typeof(ReadEmployeeByMappingInteractor).GetTypeInfo().Assembly);
+            services.AddMediatR(typeof(ReadEmployeeByIdInteractor).GetTypeInfo().Assembly);
 
 
             // Register Logger
