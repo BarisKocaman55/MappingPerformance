@@ -16,19 +16,22 @@ namespace MappingPerformance.Controllers
         private readonly IRequestHandler<ReadEmployeeWithOutMappingRequestMessage, ReadEmployeeWithOutMappingResponseMessage> ReadEmployeeWithoutMappingInteractor;
         private readonly IRequestHandler<ReadEmployeeByMappingRequestMessage, ReadEmployeeByMappingResponseMessage> ReadEmployeeWithMappingInteractor;
         private readonly IRequestHandler<ReadEmployeeByIdRequestMessage, ReadEmployeeByIdResponseMessage> ReadEmployeeByIdInteractor;
-        private readonly IRequestHandler<ReadEmployeeByAutoMapperRequestMessage, ReadEmployeeByAutoMapperResponseMessage> ReadEmployeeWithAutoMapper;
+        private readonly IRequestHandler<ReadEmployeeByAutoMapperRequestMessage, ReadEmployeeByAutoMapperResponseMessage> ReadEmployeeWithAutoMapperInteractor;
+        private readonly IRequestHandler<ReadEmployeeWithMapsterRequestMessage, ReadEmployeeWithMapsterResponseMessage> ReadEmployeeWithMapsterInteractor;
 
         public EmployeeController(ILogger<EmployeeController> logger,
             IRequestHandler<ReadEmployeeWithOutMappingRequestMessage, ReadEmployeeWithOutMappingResponseMessage> readEmployeeWithoutInteractor,
             IRequestHandler<ReadEmployeeByMappingRequestMessage, ReadEmployeeByMappingResponseMessage> readEmployeeWithMappingInteractor,
             IRequestHandler<ReadEmployeeByIdRequestMessage, ReadEmployeeByIdResponseMessage> readEmployeeByIdInteractor,
-            IRequestHandler<ReadEmployeeByAutoMapperRequestMessage, ReadEmployeeByAutoMapperResponseMessage> readEmployeeWithAutoMapper)
+            IRequestHandler<ReadEmployeeByAutoMapperRequestMessage, ReadEmployeeByAutoMapperResponseMessage> readEmployeeWithAutoMapperInteractor,
+            IRequestHandler<ReadEmployeeWithMapsterRequestMessage, ReadEmployeeWithMapsterResponseMessage> readEmployeeWithMapsterInteractor)
         {
             Logger = logger;
             ReadEmployeeWithoutMappingInteractor = readEmployeeWithoutInteractor;
             ReadEmployeeWithMappingInteractor = readEmployeeWithMappingInteractor;
             ReadEmployeeByIdInteractor = readEmployeeByIdInteractor;
-            ReadEmployeeWithAutoMapper = readEmployeeWithAutoMapper;
+            ReadEmployeeWithAutoMapperInteractor = readEmployeeWithAutoMapperInteractor;
+            ReadEmployeeWithMapsterInteractor = readEmployeeWithMapsterInteractor;
         }
 
         [HttpGet]
@@ -63,13 +66,25 @@ namespace MappingPerformance.Controllers
         {
             Logger.LogInformation("GetEmployeeWithAutoMapper Controller - start");
 
-            var response = ReadEmployeeWithAutoMapper.Handle(request, CancellationToken.None).Result;
+            var response = ReadEmployeeWithAutoMapperInteractor.Handle(request, CancellationToken.None).Result;
 
             Logger.LogInformation($"GetEmployeeWithAutoMapper Controller - response - {JsonConvert.SerializeObject(response)}");
             Logger.LogInformation("GetEmployeeWithAutoMapper Controller - end");
             return response;
         }
 
+        [HttpGet]
+        [Route("getEmployeeWithMapster")]
+        public ReadEmployeeWithMapsterResponseMessage GetEmployeeWithMapster([FromRoute] ReadEmployeeWithMapsterRequestMessage request)
+        {
+            Logger.LogInformation("GetEmployeeWithMapster Controller - start");
+
+            var response = ReadEmployeeWithMapsterInteractor.Handle(request, CancellationToken.None).Result;
+
+            Logger.LogInformation($"GetEmployeeWithMapster Controller - response - {JsonConvert.SerializeObject(response)}");
+            Logger.LogInformation("GetEmployeeWithMapster Controller - end");
+            return response;
+        }
 
         [HttpGet]
         [Route("getEmployeeById/{Id}")]
