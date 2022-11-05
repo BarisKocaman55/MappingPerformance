@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MappingPerformance.Infrastr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MappingPerformance.Test", "MappingPerformance.Test\MappingPerformance.Test.csproj", "{2357BEA8-0A7F-48F9-BAEB-43DECAC6915A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MappingPerformance.Adapters", "MappingPerformance.Adapters\MappingPerformance.Adapters.csproj", "{6D559FBE-1690-44C1-A0EF-CEC7E44F51DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MappingPerformance.Adapters", "MappingPerformance.Adapters\MappingPerformance.Adapters.csproj", "{6D559FBE-1690-44C1-A0EF-CEC7E44F51DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MappingPerformance.TestBenchmark", "MappingPerformance.TestBenchmark\MappingPerformance.TestBenchmark.csproj", "{1E36F641-B311-4DDF-BF05-8AAF7B63AD86}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{6D559FBE-1690-44C1-A0EF-CEC7E44F51DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D559FBE-1690-44C1-A0EF-CEC7E44F51DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D559FBE-1690-44C1-A0EF-CEC7E44F51DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E36F641-B311-4DDF-BF05-8AAF7B63AD86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E36F641-B311-4DDF-BF05-8AAF7B63AD86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E36F641-B311-4DDF-BF05-8AAF7B63AD86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E36F641-B311-4DDF-BF05-8AAF7B63AD86}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -23,6 +23,7 @@
   <ItemGroup>
     <ProjectReference Include="..\MappingPerformance.Adapters\MappingPerformance.Adapters.csproj" />
     <ProjectReference Include="..\MappingPerformance.Interactors\MappingPerformance.Interactors.csproj" />
+    <ProjectReference Include="..\MappingPerformance.TestBenchmark\MappingPerformance.TestBenchmark.csproj" />
   </ItemGroup>
 
   <ItemGroup>

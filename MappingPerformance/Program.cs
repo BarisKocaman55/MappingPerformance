@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Serilog;
@@ -8,6 +7,7 @@ using Serilog.Events;
 using Microsoft.Extensions.DependencyInjection;
 using MappingPerformance.Adapters.DataAccess;
 using BenchmarkDotNet.Running;
+using MappingPerformance.TestBenchmark.BenchmarkPerformance;
 
 namespace MappingPerformance
 {
@@ -23,7 +23,7 @@ namespace MappingPerformance
                                .WriteTo.Async(i => i.File(fileName))
                                .CreateLogger();
 
-            BenchmarkRunner.Run<MappingPerformance>();
+            BenchmarkRunner.Run<MappingPerformanceBenchmark>();
             var host = CreateHostBuilder(args).Build();
             CreateDbIfNotExists(host);
 
