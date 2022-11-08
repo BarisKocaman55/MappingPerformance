@@ -55,6 +55,15 @@ namespace MappingPerformance.TestBenchmark.BenchmarkPerformance
             return interactor.Handle(request, CancellationToken.None).Result;
         }
 
+        [Benchmark]
+        public ReadEmployeeByMappingResponseMessage ReadEmployeeWithLINQMappingInteractorTest()
+        {
+            var request = new ReadEmployeeByMappingRequestMessage();
+
+            var interactor = GetService<IRequestHandler<ReadEmployeeByMappingRequestMessage, ReadEmployeeByMappingResponseMessage>>();
+
+            return interactor.Handle(request, CancellationToken.None).Result;
+        }
 
     }
 }

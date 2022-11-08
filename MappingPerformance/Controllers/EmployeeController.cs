@@ -18,13 +18,15 @@ namespace MappingPerformance.Controllers
         private readonly IRequestHandler<ReadEmployeeByIdRequestMessage, ReadEmployeeByIdResponseMessage> ReadEmployeeByIdInteractor;
         private readonly IRequestHandler<ReadEmployeeByAutoMapperRequestMessage, ReadEmployeeByAutoMapperResponseMessage> ReadEmployeeWithAutoMapperInteractor;
         private readonly IRequestHandler<ReadEmployeeWithMapsterRequestMessage, ReadEmployeeWithMapsterResponseMessage> ReadEmployeeWithMapsterInteractor;
+        private readonly IRequestHandler<ReadEmployeeByLINQMappingRequestMessage, ReadEmployeeByLINQMappingResponseMessage> ReadEmployeeByLINQMappingInteractor;
 
         public EmployeeController(ILogger<EmployeeController> logger,
             IRequestHandler<ReadEmployeeWithOutMappingRequestMessage, ReadEmployeeWithOutMappingResponseMessage> readEmployeeWithoutInteractor,
             IRequestHandler<ReadEmployeeByMappingRequestMessage, ReadEmployeeByMappingResponseMessage> readEmployeeWithMappingInteractor,
             IRequestHandler<ReadEmployeeByIdRequestMessage, ReadEmployeeByIdResponseMessage> readEmployeeByIdInteractor,
             IRequestHandler<ReadEmployeeByAutoMapperRequestMessage, ReadEmployeeByAutoMapperResponseMessage> readEmployeeWithAutoMapperInteractor,
-            IRequestHandler<ReadEmployeeWithMapsterRequestMessage, ReadEmployeeWithMapsterResponseMessage> readEmployeeWithMapsterInteractor)
+            IRequestHandler<ReadEmployeeWithMapsterRequestMessage, ReadEmployeeWithMapsterResponseMessage> readEmployeeWithMapsterInteractor,
+            IRequestHandler<ReadEmployeeByLINQMappingRequestMessage, ReadEmployeeByLINQMappingResponseMessage> readEmployeeByLINQMappingInteractor)
         {
             Logger = logger;
             ReadEmployeeWithoutMappingInteractor = readEmployeeWithoutInteractor;
@@ -32,6 +34,7 @@ namespace MappingPerformance.Controllers
             ReadEmployeeByIdInteractor = readEmployeeByIdInteractor;
             ReadEmployeeWithAutoMapperInteractor = readEmployeeWithAutoMapperInteractor;
             ReadEmployeeWithMapsterInteractor = readEmployeeWithMapsterInteractor;
+            ReadEmployeeByLINQMappingInteractor = readEmployeeByLINQMappingInteractor;
         }
 
         [HttpGet]
@@ -83,6 +86,19 @@ namespace MappingPerformance.Controllers
 
             Logger.LogInformation($"GetEmployeeWithMapster Controller - response - {JsonConvert.SerializeObject(response)}");
             Logger.LogInformation("GetEmployeeWithMapster Controller - end");
+            return response;
+        }
+
+        [HttpGet]
+        [Route("getEmployeeWithLINQMapping")]
+        public ReadEmployeeByLINQMappingResponseMessage GetEmployeeByLINQMapping([FromRoute] ReadEmployeeByLINQMappingRequestMessage request)
+        {
+            Logger.LogInformation("GetEmployeeByLINQMapping Controller - start");
+
+            var response = ReadEmployeeByLINQMappingInteractor.Handle(request, CancellationToken.None).Result;
+
+            Logger.LogInformation($"GetEmployeeByLINQMapping Controller - response - {JsonConvert.SerializeObject(response)}");
+            Logger.LogInformation("GetEmployeeByLINQMapping Controller - end");
             return response;
         }
 

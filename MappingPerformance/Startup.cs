@@ -64,6 +64,7 @@ namespace MappingPerformance
             services.AddMediatR(typeof(ReadEmployeeByIdInteractor).GetTypeInfo().Assembly);
             services.AddMediatR(typeof(ReadEmployeeByAutoMapperInteractor).GetTypeInfo().Assembly);
             services.AddMediatR(typeof(ReadEmployeeWithMapsterInteractor).GetTypeInfo().Assembly);
+            services.AddMediatR(typeof(ReadEmployeeByLINQMappingInteractor).GetTypeInfo().Assembly);
 
 
             // Register Logger
