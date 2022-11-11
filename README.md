@@ -13,3 +13,4 @@
 - Mapster
 
 #### _To see details of the project you can check the Medium article that I write about this project_
+https://medium.com/@bariskocaman5592/mapping-y%C3%B6ntemleri-ve-performanslar%C4%B1-157ba00f2bf7
